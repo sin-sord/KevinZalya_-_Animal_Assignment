@@ -21,13 +21,13 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
 
             growlAudio.GetComponent<AudioSource>();
+            growlAudio.Play();
         }
 
         //Called once per frame while the action is active.
         protected override void OnUpdate() {
 
-            growlAudio.Play();
-
+			growlAudio.loop = true;
 		}
 
 		//Called when the task is disabled.
