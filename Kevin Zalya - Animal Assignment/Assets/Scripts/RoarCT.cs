@@ -6,15 +6,20 @@ namespace NodeCanvas.Tasks.Conditions {
 
 	public class RoarCT : ConditionTask {
 
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit(){
-			return null;
+
+        //Use for initialization. This is called only once in the lifetime of the task.
+        //Return null if init was successfull. Return an error string otherwise
+        protected override string OnInit(){
+
+
+            return null;
 		}
 
 		//Called whenever the condition gets enabled.
 		protected override void OnEnable() {
 			
+
+
 		}
 
 		//Called whenever the condition gets disabled.
@@ -28,7 +33,10 @@ namespace NodeCanvas.Tasks.Conditions {
 
 			if (Input.GetKey(KeyCode.R))
 			{
-				return true;
+                
+
+                return true;
+
 			}
 			else
 			{

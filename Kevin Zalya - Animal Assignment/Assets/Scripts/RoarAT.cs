@@ -9,11 +9,10 @@ namespace NodeCanvas.Tasks.Actions {
 	public class RoarAT : ActionTask {
 
 		public AudioSource roarAudio;
-	
 
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit() {
+        //Use for initialization. This is called only once in the lifetime of the task.
+        //Return null if init was successfull. Return an error string otherwise
+        protected override string OnInit() {
 			return null;
 		}
 
@@ -24,7 +23,8 @@ namespace NodeCanvas.Tasks.Actions {
 
             roarAudio.GetComponent<AudioSource>();
 
-		}
+
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
