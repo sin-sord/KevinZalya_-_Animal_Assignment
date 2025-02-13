@@ -31,10 +31,8 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 
-			if (Input.GetKey(KeyCode.R))
+			if (Input.GetKeyDown(KeyCode.R))
 			{
-                
-
                 return true;
 
 			}

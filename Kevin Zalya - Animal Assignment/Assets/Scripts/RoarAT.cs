@@ -8,12 +8,18 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class RoarAT : ActionTask {
 
-		public AudioSource roarAudio;
+		private AudioSource audioSource;
+        public AudioClip roarSound;
+
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
-			return null;
+
+            audioSource = agent.GetComponent<AudioSource>();
+
+
+            return null;
 		}
 
 		//This is called once each time the task is enabled.
@@ -21,19 +27,16 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 
-            roarAudio.GetComponent<AudioSource>();
-
-
+            
+				audioSource.PlayOneShot(roarSound);
+				EndAction(true);
         }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
 			
-			if (Input.GetKey(KeyCode.R))
-			{
-				roarAudio.Play();
-			}
-            EndAction(true);
+
+
 		}
 
 		//Called when the task is disabled.

@@ -1448,6 +1448,7 @@ GameObject:
   - component: {fileID: 1154550173}
   - component: {fileID: 1154550172}
   - component: {fileID: 1154550174}
+  - component: {fileID: 1154550175}
   m_Layer: 0
   m_Name: Carnotaurus
   m_TagString: Untagged
@@ -1490,8 +1491,13 @@ MonoBehaviour:
   _serializedBlackboard: '{"_variables":{"Speed":{"_name":"Speed","_id":"116ec559-65a5-4379-9d03-9932300902e6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Hunger":{"_name":"Hunger","_id":"b1afe807-1215-4952-a143-6df26ea0a830","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Thirst":{"_name":"Thirst","_id":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
-  _objectReferences: []
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Idle":{"_value":1,"_name":"Idle","_id":"7724d26e-1f89-4f17-bd41-979941739e5b","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
+    UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Roar":{"_value":2,"_name":"Roar","_id":"c0c23601-933a-4b0e-882a-e432256feebe","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
+    UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 508027909}
+  - {fileID: 965535606}
   _serializedVariables:
   - _json: '{"_name":"Speed","_id":"116ec559-65a5-4379-9d03-9932300902e6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
@@ -1502,6 +1508,16 @@ MonoBehaviour:
   - _json: '{"_name":"Thirst","_id":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
+  - _json: '{"_value":1,"_name":"Idle","_id":"7724d26e-1f89-4f17-bd41-979941739e5b","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
+      UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 508027909}
+  - _json: '{"_value":1,"_name":"Roar","_id":"c0c23601-933a-4b0e-882a-e432256feebe","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
+      UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 965535606}
 --- !u!114 &1154550173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1515,18 +1531,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"growlAudio":1,"$type":"NodeCanvas.Tasks.Actions.IdleAT"}]},"_color":{"r":1.0,"g":0.8890537,"b":0.4481132,"a":1.0},"_name":"Idle","_position":{"x":291.8405,"y":285.9202},"_comment":"Growl
-    SFX","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"roarAudio":2,"$type":"NodeCanvas.Tasks.Actions.RoarAT"}]},"_color":{"r":0.172549,"g":0.172549,"b":0.172549,"a":1.0},"_name":"Roar","_position":{"x":498.2411,"y":445.9689},"_comment":"Roar
-    SFX","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.RoarCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedFSM":{"_value":1},"_position":{"x":43.5,"y":375.0},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":0.5849056,"g":0.07289214,"a":1.0},"_name":"Hunt","_position":{"x":290.0,"y":486.5},"_comment":"Seeks
+    out pray","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":0.3066038,"g":0.0443069,"a":1.0},"_name":"Eat","_position":{"x":414.5,"y":618.5},"_comment":"Refills
+    Hunger bar","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
-  - {fileID: 508027909}
-  - {fileID: 965535606}
+  - {fileID: 11400000, guid: 9f65e18e63bf0754cbd3272824a7d813, type: 2}
   _boundGraphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 247, y: -164}
+    _translation: {x: 460, y: -227}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
@@ -1557,6 +1572,102 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &1154550175
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154550169}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1196576646
 GameObject:
   m_ObjectHideFlags: 0

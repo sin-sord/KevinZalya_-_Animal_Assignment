@@ -7,13 +7,19 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class IdleAT : ActionTask {
 
-        public AudioSource growlAudio;
+        private AudioSource audioSource;
+        public AudioClip growlSound;
+
 		private Animator animator;
+
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
-			return null;
+
+            audioSource = agent.GetComponent<AudioSource>();
+
+            return null;
 		}
 
 		//This is called once each time the task is enabled.
@@ -21,19 +27,20 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 
-            growlAudio.GetComponent<AudioSource>();
-            growlAudio.Play();
-			animator.GetComponent<Animator>();
+            audioSource.PlayOneShot(growlSound);
+
+            //	animator.GetComponent<Animator>();
+
         }
 
         //Called once per frame while the action is active.
         protected override void OnUpdate() {
 
-			growlAudio.loop = true;
-			
-			//	ASK FOR HELP?
-			//animator.SetFloat("Idle",0);
-		}
+			audioSource.loop = true;
+
+            //	Ask for help with animating
+            //animator.SetFloat("Idle",0);
+        }
 
 		//Called when the task is disabled.
 		protected override void OnStop() {
