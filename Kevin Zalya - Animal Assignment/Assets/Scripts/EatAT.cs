@@ -5,20 +5,17 @@ using UnityEngine;
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class IdleAT : ActionTask {
+	public class EatAT : ActionTask {
 
-		//  AUDIO
+
+        //  AUDIO
         private AudioSource audioSource;
-        public AudioClip growlSound;
+        public AudioClip eatSound;
 
-		//	ANIMATION
-		private Animator animator;
-		
-		//  BLACKBOARD
-		public BBParameter<float> hungerFloat;
-		public BBParameter<float> thirstFloat;
-		public float hungerUsage;
-		public float thirstUsage;
+		//	BLACKBOARD
+		public BBParameter<float> Hunger;
+		public float maxHunger;
+		public float feedRate;
 
 
         //Use for initialization. This is called only once in the lifetime of the task.
@@ -33,22 +30,22 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
+			
+            audioSource.PlayOneShot(eatSound);
+		}
 
-            audioSource.PlayOneShot(growlSound);
+		//Called once per frame while the action is active.
+		protected override void OnUpdate() {
 
-        }
+			Hunger.value += feedRate * Time.deltaTime;
 
-        //Called once per frame while the action is active.
-        protected override void OnUpdate() {
+            if (Hunger.value >= maxHunger)
+			{
+				Hunger.value = maxHunger;
+				EndAction(true);
+			}
 
-			audioSource.loop = true;
-
-		
-            hungerFloat.value  -= hungerUsage * Time.deltaTime;
-            thirstFloat.value  -= thirstUsage * Time.deltaTime;
-
-
-        }
+		}
 
 		//Called when the task is disabled.
 		protected override void OnStop() {
