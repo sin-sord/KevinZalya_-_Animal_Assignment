@@ -34,24 +34,33 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
 
 			navAgent.destination = goatTransform.value.position;
-          //  audioSource.PlayOneShot(walkSound);
+            audioSource.PlayOneShot(walkSound);  //	Plays the "Walk" audio on loop
 
-		}
+            NavMeshHit hit;  //  Carno gets a hit on the goats position
+			NavMesh.SamplePosition(goatTransform.value.position, out hit, sampleDistance, NavMesh.AllAreas);
+			lastPosition = hit.position;
+
+			navAgent.destination = lastPosition;  //  the destination for Carno is the goats position
+
+
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
 
+            audioSource.loop = true;  //	Plays the "Walk" audio on loop
             Debug.Log("Hunting goat");
-
-            NavMeshHit hitGoat;  //  Carno gets a hit on the goats position
-			NavMesh.SamplePosition(goatTransform.value.position, out hitGoat, sampleDistance, NavMesh.AllAreas);
-			lastPosition = hitGoat.position;
-
-			navAgent.destination = lastPosition;  //  the destination for Carno is the goats position
-
-            audioSource.loop = true;
+			
+			
+			if (Vector3.Distance(agent.transform.position, goatTransform.value.position) <= 3)
+			{
+				Debug.Log("here");
 
 			EndAction(true);
+			}
+			
+			
+
 			
         }
 

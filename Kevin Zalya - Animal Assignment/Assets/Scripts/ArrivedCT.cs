@@ -40,8 +40,9 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 
-            if (Vector3.Distance(agent.transform.position, targetTransform.value.position) <= 0.5f)
+			if (Vector3.Distance(agent.transform.position, targetTransform.value.position) <= 0.5f)
             {
+				Debug.Log("i smell it");
                 return true;
             }
 			else

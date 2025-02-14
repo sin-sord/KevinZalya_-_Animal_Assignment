@@ -1961,7 +1961,7 @@ GameObject:
   - component: {fileID: 1154550175}
   - component: {fileID: 1154550176}
   m_Layer: 0
-  m_Name: Carnotaurus
+  m_Name: Gary the Carnotaurus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2002,7 +2002,6 @@ MonoBehaviour:
   _serializedBlackboard: '{"_variables":{"Hunger":{"_value":30.0,"_name":"Hunger","_id":"b1afe807-1215-4952-a143-6df26ea0a830","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Thirst":{"_value":150.0,"_name":"Thirst","_id":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Goat":{"_value":1,"_name":"Goat","_id":"1027a10b-6070-4398-b3db-30b9d971a871","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"GoatPosition":{"_name":"GoatPosition","_id":"8b9fbcdd-c53a-4098-b6ca-990785b4a7ff","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Idle":{"_value":2,"_name":"Idle","_id":"7724d26e-1f89-4f17-bd41-979941739e5b","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
     UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Roar":{"_value":3,"_name":"Roar","_id":"c0c23601-933a-4b0e-882a-e432256feebe","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
     UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
@@ -2023,9 +2022,6 @@ MonoBehaviour:
     _references:
     - {fileID: 0}
     - {fileID: 1164006660}
-  - _json: '{"_name":"GoatPosition","_id":"8b9fbcdd-c53a-4098-b6ca-990785b4a7ff","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
-    _references: []
   - _json: '{"_value":1,"_name":"Idle","_id":"7724d26e-1f89-4f17-bd41-979941739e5b","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
       UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references:
@@ -2049,21 +2045,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedFSM":{"_value":1},"_position":{"x":43.5,"y":375.0},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"walkSound":2,"goatTransform":{"_name":"Goat","_targetVariableID":"1027a10b-6070-4398-b3db-30b9d971a871"},"sampleDistance":20.0,"$type":"NodeCanvas.Tasks.Actions.HuntAT"}]},"_color":{"r":0.5849056,"g":0.07289214,"a":1.0},"_name":"Hunt","_position":{"x":250.8725,"y":521.3577},"_comment":"Seeks
-    out pray","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"eatSound":3,"Hunger":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"targetTransform":{"_name":"Goat","_targetVariableID":"1027a10b-6070-4398-b3db-30b9d971a871"},"maxHunger":120.0,"feedRate":10.0,"$type":"NodeCanvas.Tasks.Actions.EatAT"}]},"_color":{"r":0.3066038,"g":0.0443069,"a":1.0},"_name":"Eat","_position":{"x":414.5,"y":663.6929},"_comment":"Refills
-    Hunger bar","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.WalkAT"}]},"_color":{"r":0.9433962,"g":0.9225061,"b":0.7609469,"a":1.0},"_name":"Walk","_position":{"x":236.5993,"y":203.3691},"$type":"NodeCanvas.StateMachines.ActionState"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"g":0.563843,"b":0.8301887,"a":1.0},"_name":"Thirsty","_position":{"x":-148.5,"y":472.5},"$type":"NodeCanvas.StateMachines.ActionState","$id":"4"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"g":0.3122579,"b":0.4622642,"a":1.0},"_name":"Drink","_position":{"x":-280.5,"y":620.5},"$type":"NodeCanvas.StateMachines.ActionState","$id":"5"}],"connections":[{"_condition":{"hungerValue":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"hungerThreshold":20.0,"$type":"NodeCanvas.Tasks.Conditions.HungryCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"roarSound":4,"targetTransform":{"_name":"Goat","_targetVariableID":"1027a10b-6070-4398-b3db-30b9d971a871"},"$type":"NodeCanvas.Tasks.Conditions.ArrivedCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedFSM":{"_value":1},"_position":{"x":43.5,"y":375.0},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"walkSound":2,"goatTransform":{"_name":"Goat","_targetVariableID":"1027a10b-6070-4398-b3db-30b9d971a871"},"sampleDistance":20.0,"$type":"NodeCanvas.Tasks.Actions.HuntAT"}]},"_color":{"r":0.5849056,"g":0.07289214,"a":1.0},"_name":"Hunt","_position":{"x":270.866,"y":474.7009},"_comment":"Seeks
+    out pray","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"eatSound":3,"Hunger":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"targetTransform":{"_name":"Goat","_targetVariableID":"1027a10b-6070-4398-b3db-30b9d971a871"},"maxHunger":120.0,"feedRate":10.0,"$type":"NodeCanvas.Tasks.Actions.EatAT"}]},"_color":{"r":0.3066038,"g":0.0443069,"a":1.0},"_name":"Eat","_position":{"x":398.502,"y":665.0259},"_comment":"Refills
+    Hunger bar","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.WalkAT"}]},"_color":{"r":0.9433962,"g":0.9225061,"b":0.7609469,"a":1.0},"_name":"Walk","_position":{"x":236.5993,"y":203.3691},"$type":"NodeCanvas.StateMachines.ActionState"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"g":0.563843,"b":0.8301887,"a":1.0},"_name":"Thirsty","_position":{"x":-251.1536,"y":467.1673},"$type":"NodeCanvas.StateMachines.ActionState","$id":"4"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"g":0.3122579,"b":0.4622642,"a":1.0},"_name":"Drink","_position":{"x":-383.1536,"y":615.1674},"$type":"NodeCanvas.StateMachines.ActionState","$id":"5"}],"connections":[{"_condition":{"hungerValue":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"hungerThreshold":20.0,"$type":"NodeCanvas.Tasks.Conditions.HungryCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"hungerValue":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"hungerThreshold":100.0,"$type":"NodeCanvas.Tasks.Conditions.EatCT"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 11400000, guid: 9f65e18e63bf0754cbd3272824a7d813, type: 2}
   - {fileID: 8300000, guid: 1058f15b6636a7b4688885271b53913e, type: 3}
   - {fileID: 8300000, guid: fc8e30116596d6e48b077e84cc610cff, type: 3}
-  - {fileID: 8300000, guid: 9468bda69763f6d4aaab34c1e2e83a86, type: 3}
   _boundGraphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 438, y: -132}
-    _zoomFactor: 0.7523266
+    _translation: {x: 453, y: -95}
+    _zoomFactor: 0.7500952
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -2221,7 +2216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1164006660}
   m_Layer: 0
-  m_Name: Goat
+  m_Name: Lewis the Goat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3491,7 +3486,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.097408034, z: -0, w: 0.99524456}
   m_LocalPosition: {x: 36.543556, y: 25.462189, z: -19.783535}
-  m_LocalScale: {x: 16.033731, y: -0.5007515, z: 29.282284}
+  m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 401631062}
