@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: huntFSM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
-  _objectReferences: []
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"walkSound":1,"goatTransform":{"_name":"Goat","_targetVariableID":"1027a10b-6070-4398-b3db-30b9d971a871"},"sampleDistance":20.0,"$type":"NodeCanvas.Tasks.Actions.HuntAT"}]},"_color":{"r":0.5849056,"g":0.07289214,"a":1.0},"_name":"Hunt","_position":{"x":500.6771,"y":481.0},"_comment":"Seeks
+    out pray","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"eatSound":2,"Hunger":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"targetTransform":{"_name":"Goat","_targetVariableID":"1027a10b-6070-4398-b3db-30b9d971a871"},"maxHunger":120.0,"feedRate":10.0,"$type":"NodeCanvas.Tasks.Actions.EatAT"}]},"_color":{"r":0.3066038,"g":0.0443069,"a":1.0},"_name":"Eat","_position":{"x":626.636,"y":671.325},"_comment":"Refills
+    Hunger bar","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 1058f15b6636a7b4688885271b53913e, type: 3}
+  - {fileID: 8300000, guid: fc8e30116596d6e48b077e84cc610cff, type: 3}
   _graphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 0, y: 0}
-    _zoomFactor: 1
+    _translation: {x: 178, y: 2}
+    _zoomFactor: 0.59629714
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}
