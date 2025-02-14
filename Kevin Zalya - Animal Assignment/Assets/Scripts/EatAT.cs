@@ -14,7 +14,8 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//	BLACKBOARD
 		public BBParameter<float> Hunger;
-		public float maxHunger;
+		public BBParameter<Transform> targetTransform;
+        public float maxHunger;
 		public float feedRate;
 
 
@@ -22,7 +23,7 @@ namespace NodeCanvas.Tasks.Actions {
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
 
-            audioSource = agent.GetComponent<AudioSource>();
+          //  audioSource = agent.GetComponent<AudioSource>();
             return null;
 		}
 
@@ -30,12 +31,14 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			
-            audioSource.PlayOneShot(eatSound);
-		}
+
+
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
+
+			Debug.Log("Eating goat");
 
 			Hunger.value += feedRate * Time.deltaTime;
 
