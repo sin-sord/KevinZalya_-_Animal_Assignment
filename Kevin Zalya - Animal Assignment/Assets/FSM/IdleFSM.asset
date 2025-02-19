@@ -12,18 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: IdleFSM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"growlSound":1,"hungerFloat":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"thirstFloat":{"_name":"Thirst","_targetVariableID":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1"},"hungerUsage":5.0,"thirstUsage":3.0,"$type":"NodeCanvas.Tasks.Actions.IdleAT"}]},"_color":{"r":1.0,"g":0.8890537,"b":0.4481132,"a":1.0},"_name":"Idle","_position":{"x":498.5,"y":479.0},"_comment":"Growl
-    SFX","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"roarSound":2,"$type":"NodeCanvas.Tasks.Actions.RoarAT"}]},"_color":{"r":0.172549,"g":0.172549,"b":0.172549,"a":1.0},"_name":"Roar","_position":{"x":731.4006,"y":632.0487},"_comment":"Roar
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"hungerFloat":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"thirstFloat":{"_name":"Thirst","_targetVariableID":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1"},"hungerUsage":4.0,"thirstUsage":4.0,"$type":"NodeCanvas.Tasks.Actions.IdleAT"},{"garySFX":"Growl","$type":"NodeCanvas.Tasks.Actions.PlaySoundAT"},{"targetPosition":{"_name":"Target
+    Position","_targetVariableID":"7a28cfd8-4c79-4a10-99cf-b22cb951073c"},"wanderDistance":3.0,"wanderRadius":2.0,"wanderSampleFrequency":0.2,"wanderDirectionChangeFrequiency":1.0,"$type":"NodeCanvas.Tasks.Actions.RoamAT"}]},"_color":{"r":1.0,"g":0.8890537,"b":0.4481132,"a":1.0},"_name":"Wander","_position":{"x":499.6011,"y":479.0},"_comment":"Growl
+    SFX","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"garySFX":"Roar","$type":"NodeCanvas.Tasks.Actions.PlaySoundAT"}]},"_color":{"r":0.172549,"g":0.172549,"b":0.172549,"a":1.0},"_name":"Roar","_position":{"x":731.4006,"y":632.0487},"_comment":"Roar
     SFX","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.RoarCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
-  _objectReferences:
-  - {fileID: 0}
-  - {fileID: 8300000, guid: f9756b73d4c81884c8419fcea59f7639, type: 3}
-  - {fileID: 8300000, guid: 9468bda69763f6d4aaab34c1e2e83a86, type: 3}
+  _objectReferences: []
   _graphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -56, y: -294}
-    _zoomFactor: 1
+    _translation: {x: -73, y: -248}
+    _zoomFactor: 0.9081656
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}

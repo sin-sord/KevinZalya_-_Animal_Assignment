@@ -6,16 +6,15 @@ using UnityEngine;
 
 namespace NodeCanvas.Tasks.Conditions {
 
-	public class HungryCT : ConditionTask {
+	public class BarValueLowCT : ConditionTask {
 
-		public BBParameter<float> hungerValue;
+        public BBParameter<float> barValue;
 
-		public float hungerThreshold;
-		
+        public float barThreshold;
 
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit(){
+        //Use for initialization. This is called only once in the lifetime of the task.
+        //Return null if init was successfull. Return an error string otherwise
+        protected override string OnInit(){
 			return null;
 		}
 
@@ -33,11 +32,10 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 
-			float value = hungerValue.value;
-			bool hungerValueBelow = value < hungerThreshold;
+            float value = barValue.value;
+            bool barValueBelow = value < barThreshold;
 
-			return hungerValueBelow;
-
-		}
+            return barValueBelow;
+        }
 	}
 }

@@ -1,25 +1,17 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-using UnityEditor.Profiling.Memory.Experimental;
-using UnityEngine;
 
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class RoarAT : ActionTask {
+	public class PlaySoundAT : ActionTask {
 
-		private AudioSource audioSource;
-        public AudioClip roarSound;
+		public string garySFX;
 
-
-        //Use for initialization. This is called only once in the lifetime of the task.
-        //Return null if init was successfull. Return an error string otherwise
-        protected override string OnInit() {
-
-            audioSource = agent.GetComponent<AudioSource>();
-
-
-            return null;
+		//Use for initialization. This is called only once in the lifetime of the task.
+		//Return null if init was successfull. Return an error string otherwise
+		protected override string OnInit() {
+			return null;
 		}
 
 		//This is called once each time the task is enabled.
@@ -27,16 +19,13 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 
-            
-				audioSource.PlayOneShot(roarSound);
-				EndAction(true);
-        }
+			AudioManager.Instance.PlaySound(garySFX);
+			EndAction(true);
+		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
 			
-
-
 		}
 
 		//Called when the task is disabled.

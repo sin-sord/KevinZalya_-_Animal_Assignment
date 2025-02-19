@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class EatAT : ActionTask {
+	public class DrinkAT : ActionTask {
 
         //	BLACKBOARD
         public BBParameter<float> BarValue;

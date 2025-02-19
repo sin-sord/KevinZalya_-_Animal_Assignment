@@ -1,15 +1,17 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
-using UnityEngine.AI;
 
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class WalkAT : ActionTask {
+	public class RefillBarAT : ActionTask {
 
-
-
+        //	BLACKBOARD
+        public BBParameter<float> BarValue;
+        public BBParameter<Transform> targetTransform;
+        public float maxThresholdBar;
+        public float refillRate;
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
@@ -21,16 +23,20 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-
-
-
         }
 
 		//Called once per frame while the action is active.
-		protected override void OnUpdate()
-		{
+		protected override void OnUpdate() {
+			
+            Debug.Log("Refilling bar");
 
+            BarValue.value += refillRate * Time.deltaTime;
 
+            if (BarValue.value >= maxThresholdBar)
+            {
+                BarValue.value = maxThresholdBar;
+                EndAction(true);
+            }
 		}
 
 		//Called when the task is disabled.

@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: thirstFSM
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[]},"_color":{"g":0.563843,"b":0.8301887,"a":1.0},"_name":"Thirsty","_position":{"x":499.0,"y":481.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"g":0.3122579,"b":0.4622642,"a":1.0},"_name":"Drink","_position":{"x":370.9995,"y":629.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"targetTransform":{"_name":"Water","_targetVariableID":"88d128d6-24e7-4774-bc36-84c8438cf6cf"},"sampleDistance":50.0,"$type":"NodeCanvas.Tasks.Actions.GoToTargetAT"}]},"_color":{"r":0.3955144,"g":0.6351091,"b":0.8301887,"a":1.0},"_name":"Approach","_position":{"x":537.0,"y":424.0},"_comment":"Approach
+    Water","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"BarValue":{"_name":"Thirst","_targetVariableID":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1"},"targetTransform":{"_name":"Water","_targetVariableID":"88d128d6-24e7-4774-bc36-84c8438cf6cf"},"maxThresholdBar":110.0,"refillRate":10.0,"$type":"NodeCanvas.Tasks.Actions.DrinkAT"},{"garySFX":"Drink","$type":"NodeCanvas.Tasks.Actions.PlaySoundAT"}]},"_color":{"r":0.2431373,"g":0.3921569,"b":0.509804,"a":1.0},"_name":"Drink","_position":{"x":360.1343,"y":571.869},"_comment":"Refills
+    Thirst bar","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _objectReferences: []
   _graphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 0, y: 0}
+    _translation: {x: 28, y: -327}
     _zoomFactor: 1
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}
