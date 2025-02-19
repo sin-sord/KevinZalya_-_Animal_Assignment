@@ -171,7 +171,7 @@ MonoBehaviour:
   sounds:
   - name: Growl
     clip: {fileID: 8300000, guid: f9756b73d4c81884c8419fcea59f7639, type: 3}
-    volume: 0.55
+    volume: 0.35
     pitch: 1
     looping: 1
     source: {fileID: 0}
@@ -1079,7 +1079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &709311450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,11 +1093,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{"myVector3":{"_name":"myVector3","_id":"efb1d7c6-f42e-4dd9-a2e6-b0ea35b263c3","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
+  _serializedBlackboard: '{"_variables":{"targetPosition":{"_name":"targetPosition","_id":"efb1d7c6-f42e-4dd9-a2e6-b0ea35b263c3","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences: []
   _serializedVariables:
-  - _json: '{"_name":"myVector3","_id":"efb1d7c6-f42e-4dd9-a2e6-b0ea35b263c3","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
+  - _json: '{"_name":"targetPosition","_id":"efb1d7c6-f42e-4dd9-a2e6-b0ea35b263c3","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references: []
 --- !u!114 &709311451
@@ -1113,7 +1113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"targetPosition":{"_name":"myVector3","_targetVariableID":"efb1d7c6-f42e-4dd9-a2e6-b0ea35b263c3"},"wanderDistance":5.0,"wanderRadius":3.0,"wanderSampleFrequency":0.2,"wanderDirectionChangeFrequiency":1.0,"$type":"NodeCanvas.Tasks.Actions.RoamAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":245.0,"y":202.0},"$type":"NodeCanvas.StateMachines.ActionState"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"wanderDistance":20.0,"wanderRadius":20.0,"wanderSampleFrequency":0.2,"wanderDirectionChangeFrequiency":1.0,"targetPosition":{"_name":"targetPosition","_targetVariableID":"efb1d7c6-f42e-4dd9-a2e6-b0ea35b263c3"},"searchRadius":5.0,"$type":"NodeCanvas.Tasks.Actions.RoamAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":480.0,"y":239.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":625.0,"y":337.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences: []
   _boundGraphSource:
     _version: 3.31
@@ -1807,13 +1807,11 @@ MonoBehaviour:
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Water":{"_value":2,"_name":"Water","_id":"88d128d6-24e7-4774-bc36-84c8438cf6cf","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Target
     Position":{"_name":"Target Position","_id":"7a28cfd8-4c79-4a10-99cf-b22cb951073c","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"WalkSFX":{"_value":3,"_name":"WalkSFX","_id":"1cf19fce-546b-4ba9-9f6a-59a8e012820a","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
-    UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences:
   - {fileID: 0}
   - {fileID: 1164006660}
   - {fileID: 2030795790}
-  - {fileID: 0}
   _serializedVariables:
   - _json: '{"_value":150.0,"_name":"Hunger","_id":"b1afe807-1215-4952-a143-6df26ea0a830","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
@@ -1834,11 +1832,6 @@ MonoBehaviour:
   - _json: '{"_name":"Target Position","_id":"7a28cfd8-4c79-4a10-99cf-b22cb951073c","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references: []
-  - _json: '{"_value":1,"_name":"WalkSFX","_id":"1cf19fce-546b-4ba9-9f6a-59a8e012820a","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AudioSource,
-      UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
-    _references:
-    - {fileID: 0}
-    - {fileID: 0}
 --- !u!114 &1154550173
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,33 +2,35 @@ using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 namespace NodeCanvas.Tasks.Actions {
 
 	public class RoamAT : ActionTask {
+        //	ANIMATION
+        private Animator animator;
 
         //  BLACKBOARD
+        public BBParameter<float> hungerFloat;
+        public BBParameter<float> thirstFloat;
         public BBParameter<Vector3> targetPosition;
-
+        public float hungerUsage;
+        public float thirstUsage;
 
         //  WANDER
-        public float wanderDistance;
-        public float wanderRadius;
-        public float wanderSampleFrequency;
-        public float wanderDirectionChangeFrequiency;
-
-        private Vector3 randomPoint = Vector3.zero;
-        private float timeSinceLastDirectionChange;
-        private float timeSinceLastSample = 0;
-
-
+        private NavMeshAgent navAgent;
+        public float roamRadius;
+        Vector3 finalDestination;
 
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
-			return null;
+
+            navAgent = agent.GetComponent<NavMeshAgent>();
+            
+            return null;
 		}
 
 		//This is called once each time the task is enabled.
@@ -36,32 +38,31 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 
-		}
+            Vector3 roamTarget = Random.insideUnitSphere * roamRadius;
+            
+            roamTarget += agent.transform.position;
+
+            NavMeshHit hit;
+
+            NavMesh.SamplePosition(roamTarget, out hit, roamRadius, 1);
+            finalDestination = hit.position;
+
+            navAgent.SetDestination(hit.position);
+
+        }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
 
-            Vector3 circleCenter = agent.transform.position + agent.transform.forward * wanderDistance;
+            hungerFloat.value -= hungerUsage * Time.deltaTime;
+            thirstFloat.value -= thirstUsage * Time.deltaTime;
 
-            timeSinceLastSample += Time.deltaTime;
-            timeSinceLastDirectionChange += Time.deltaTime;
 
-            if (timeSinceLastSample > wanderSampleFrequency) // update the position the character is moving in using randomPoint below
+            if (Vector3.Distance(agent.transform.position, finalDestination) < 1f)
             {
-
-                Vector3 destination = circleCenter + new Vector3(randomPoint.x, agent.transform.position.y, randomPoint.y);
-                targetPosition.value = destination;
-                timeSinceLastSample = 0;
-                Debug.DrawLine(agent.transform.position, circleCenter, Color.red, 0.25f);
-                DrawCircle(circleCenter, wanderRadius, Color.cyan, 10);
+                EndAction(true);
             }
 
-            if (timeSinceLastDirectionChange > wanderDirectionChangeFrequiency)  //  updates the direction the character is moving in
-            {
-
-                randomPoint = Random.insideUnitCircle.normalized * wanderRadius;  //  changes the points to be random
-                timeSinceLastDirectionChange = 0;  //  resets the timeSinceLastDirectionChange
-            }
         }
 
 		//Called when the task is disabled.
@@ -74,21 +75,5 @@ namespace NodeCanvas.Tasks.Actions {
 			
 		}
 
-
-        private void DrawCircle(Vector3 circleCenter, float radius, Color circleColor, int numberOfPoints)
-        {
-            // creates a circle on the ground for the characte to use to wander around
-            int increment = 360 / numberOfPoints;
-            for (int i = 0; i < 360; i += increment)
-            {
-                //  increments the points of the circle
-                Vector3 p1 = new Vector3(Mathf.Cos(i * Mathf.Deg2Rad), 0f, Mathf.Sin(i * Mathf.Deg2Rad)) * radius;
-                Vector3 p2 = new Vector3(Mathf.Cos((i + increment) * Mathf.Deg2Rad), 0f, Mathf.Sin((i + increment) * Mathf.Deg2Rad)) * radius;
-
-                //  draws a line of the circle
-                Debug.DrawLine(circleCenter + p1, circleCenter + p2, circleColor, 0.25f);
-
-            }
-        }
     }
 }
