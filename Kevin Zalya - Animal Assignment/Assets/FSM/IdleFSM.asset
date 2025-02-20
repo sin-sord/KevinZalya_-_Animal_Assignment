@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IdleFSM
   m_EditorClassIdentifier: 
   _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"garySFX":"Growl","$type":"NodeCanvas.Tasks.Actions.PlaySoundAT"},{"hungerFloat":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"thirstFloat":{"_name":"Thirst","_targetVariableID":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1"},"targetPosition":{"_name":"Target
-    Position","_targetVariableID":"7a28cfd8-4c79-4a10-99cf-b22cb951073c"},"hungerUsage":4.0,"thirstUsage":4.0,"roamRadius":5.0,"$type":"NodeCanvas.Tasks.Actions.RoamAT"}]},"_color":{"r":1.0,"g":0.8890537,"b":0.4481132,"a":1.0},"_name":"Wander","_position":{"x":499.6011,"y":479.0},"_comment":"Growl
+    Position","_targetVariableID":"7a28cfd8-4c79-4a10-99cf-b22cb951073c"},"hungerUsage":4.0,"thirstUsage":4.0,"roamRadius":7.0,"$type":"NodeCanvas.Tasks.Actions.RoamAT"}]},"_color":{"r":1.0,"g":0.8890537,"b":0.4481132,"a":1.0},"_name":"Wander","_position":{"x":498.6011,"y":480.5},"_comment":"Growl
     SFX","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"EndTask","_position":{"x":343.4061,"y":390.297},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _objectReferences: []
   _graphSource:

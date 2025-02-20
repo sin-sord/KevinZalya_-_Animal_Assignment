@@ -8,9 +8,7 @@ using UnityEngine.AI;
 namespace NodeCanvas.Tasks.Actions {
 
 	public class RoamAT : ActionTask {
-        //	ANIMATION
-        private Animator animator;
-
+       
         //  BLACKBOARD
         public BBParameter<float> hungerFloat;
         public BBParameter<float> thirstFloat;
@@ -29,7 +27,8 @@ namespace NodeCanvas.Tasks.Actions {
         protected override string OnInit() {
 
             navAgent = agent.GetComponent<NavMeshAgent>();
-            
+
+
             return null;
 		}
 
