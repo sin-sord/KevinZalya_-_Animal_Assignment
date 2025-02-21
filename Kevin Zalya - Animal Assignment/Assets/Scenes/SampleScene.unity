@@ -205,7 +205,7 @@ MonoBehaviour:
     source: {fileID: 0}
     type: 0
   - name: Stomach
-    clip: {fileID: 8300000, guid: b0519c447eb2e444995a65b254c25279, type: 3}
+    clip: {fileID: 8300000, guid: 2078a9c5b466d06479e155e5eb6562f1, type: 3}
     volume: 1
     pitch: 1
     looping: 0
@@ -2213,7 +2213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 8, y: -0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &920450135
@@ -2299,7 +2299,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -311.5889, w: 0}
+  m_margin: {x: 0, y: 0, z: -501.72406, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2669,15 +2669,17 @@ MonoBehaviour:
   _parentBlackboard: {fileID: 0}
   _serializedBlackboard: '{"_variables":{"Hunger":{"_value":150.0,"_name":"Hunger","_id":"b1afe807-1215-4952-a143-6df26ea0a830","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Thirst":{"_value":25.0,"_name":"Thirst","_id":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Goat":{"_value":1,"_name":"Goat","_id":"1027a10b-6070-4398-b3db-30b9d971a871","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Food":{"_value":1,"_name":"Food","_id":"1027a10b-6070-4398-b3db-30b9d971a871","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Water":{"_value":2,"_name":"Water","_id":"88d128d6-24e7-4774-bc36-84c8438cf6cf","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Target
     Position":{"_name":"Target Position","_id":"7a28cfd8-4c79-4a10-99cf-b22cb951073c","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Instantiate":{"_value":3,"_name":"Instantiate","_id":"546a7f4c-6fd9-4d1f-95b8-5335a46ed738","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences:
   - {fileID: 0}
   - {fileID: 1164006660}
   - {fileID: 2030795790}
+  - {fileID: 1042118687}
   _serializedVariables:
   - _json: '{"_value":150.0,"_name":"Hunger","_id":"b1afe807-1215-4952-a143-6df26ea0a830","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
@@ -2685,7 +2687,7 @@ MonoBehaviour:
   - _json: '{"_value":25.0,"_name":"Thirst","_id":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":1,"_name":"Goat","_id":"1027a10b-6070-4398-b3db-30b9d971a871","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+  - _json: '{"_value":1,"_name":"Food","_id":"1027a10b-6070-4398-b3db-30b9d971a871","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references:
     - {fileID: 0}
@@ -2698,6 +2700,11 @@ MonoBehaviour:
   - _json: '{"_name":"Target Position","_id":"7a28cfd8-4c79-4a10-99cf-b22cb951073c","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references: []
+  - _json: '{"_value":1,"_name":"Instantiate","_id":"546a7f4c-6fd9-4d1f-95b8-5335a46ed738","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 1042118687}
 --- !u!114 &1154550173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2711,8 +2718,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedFSM":{"_value":1},"_name":"Idle","_position":{"x":57.94833,"y":359.6145},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"0"},{"_nestedFSM":{"_value":2},"_name":"Hunt","_position":{"x":303.7411,"y":534.8176},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"1"},{"_nestedFSM":{"_value":3},"_name":"Drink","_position":{"x":-238.8592,"y":523.0404},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"2"},{"_position":{"x":374.5099,"y":69.61864},"$type":"NodeCanvas.StateMachines.AnyState","$id":"3"},{"_actionList":{"executionMode":1,"actions":[{"garySFX":"Roar","$type":"NodeCanvas.Tasks.Actions.PlaySoundAT"}]},"_color":{"r":0.1367925,"g":0.1367925,"b":0.1367925,"a":1.0},"_name":"Roar","_position":{"x":383.8926,"y":209.9929},"_comment":"When
-    R is pressed Gary roars","$type":"NodeCanvas.StateMachines.ActionState","$id":"4"}],"connections":[{"_condition":{"barValue":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"barThreshold":35.0,"$type":"NodeCanvas.Tasks.Conditions.BarValueLowCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"barValue":{"_name":"Thirst","_targetVariableID":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1"},"barThreshold":20.0,"$type":"NodeCanvas.Tasks.Conditions.BarValueLowCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"barValue":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"hungerThreshold":150.0,"$type":"NodeCanvas.Tasks.Conditions.RefilledCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"barValue":{"_name":"Thirst","_targetVariableID":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1"},"hungerThreshold":110.0,"$type":"NodeCanvas.Tasks.Conditions.RefilledCT"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.RoarCT"},"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedFSM":{"_value":1},"_name":"Idle","_position":{"x":131.4686,"y":407.4027},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"0"},{"_nestedFSM":{"_value":2},"_name":"Hunt","_position":{"x":358.8814,"y":604.6619},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"garySFX":"Roar","$type":"NodeCanvas.Tasks.Actions.PlaySoundAT"}]},"_color":{"r":0.1367925,"g":0.1367925,"b":0.1367925,"a":1.0},"_name":"Roar","_position":{"x":-201.9362,"y":219.3787},"_comment":"When
+    R is pressed Gary roars","$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_nestedFSM":{"_value":3},"_name":"Drink","_position":{"x":-380.3858,"y":607.5887},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"3"}],"connections":[{"_condition":{"barValue":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"barThreshold":35.0,"$type":"NodeCanvas.Tasks.Conditions.BarValueLowCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"barValue":{"_name":"Thirst","_targetVariableID":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1"},"barThreshold":20.0,"$type":"NodeCanvas.Tasks.Conditions.BarValueLowCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.RoarCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"barValue":{"_name":"Hunger","_targetVariableID":"b1afe807-1215-4952-a143-6df26ea0a830"},"hungerThreshold":150.0,"$type":"NodeCanvas.Tasks.Conditions.RefilledCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.RoarCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"barValue":{"_name":"Thirst","_targetVariableID":"3e0c1a7f-5ebc-483f-bf9c-1e69f4cfeff1"},"hungerThreshold":110.0,"$type":"NodeCanvas.Tasks.Conditions.RefilledCT"},"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.RoarCT"},"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 11400000, guid: 9f65e18e63bf0754cbd3272824a7d813, type: 2}
@@ -2722,8 +2729,8 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 118.25277, y: -29.540567}
-    _zoomFactor: 0.9349616
+    _translation: {x: 532.6277, y: -344.2996}
+    _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0

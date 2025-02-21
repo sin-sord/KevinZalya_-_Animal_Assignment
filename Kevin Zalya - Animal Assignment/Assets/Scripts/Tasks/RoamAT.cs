@@ -1,6 +1,7 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,6 +14,7 @@ namespace NodeCanvas.Tasks.Actions {
         public BBParameter<float> hungerFloat;
         public BBParameter<float> thirstFloat;
         public BBParameter<Vector3> targetPosition;
+    
         public float hungerUsage;
         public float thirstUsage;
 
@@ -27,7 +29,6 @@ namespace NodeCanvas.Tasks.Actions {
         protected override string OnInit() {
 
             navAgent = agent.GetComponent<NavMeshAgent>();
-
 
             return null;
 		}
