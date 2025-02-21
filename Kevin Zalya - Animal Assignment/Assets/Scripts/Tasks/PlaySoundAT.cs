@@ -19,6 +19,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 
+			//  plays sounds on a list depending on the action
 			AudioManager.Instance.PlaySound(garySFX);
 			EndAction(true);
 		}

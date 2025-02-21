@@ -32,6 +32,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		protected override bool OnCheck() {
 			Debug.Log("Bar refilled");
 
+			//  if the hunger/thirst bar reaches the max value then go to the next action
             float value = barValue.value;
             bool hungerFull = value >= hungerThreshold;
 

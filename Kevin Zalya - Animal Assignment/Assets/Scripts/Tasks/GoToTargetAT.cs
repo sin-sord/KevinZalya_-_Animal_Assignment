@@ -34,11 +34,11 @@ namespace NodeCanvas.Tasks.Actions {
 
             navAgent.destination = targetTransform.value.position;
 
-            NavMeshHit hit;  //  Carno gets a hit on the targets position
+            NavMeshHit hit;  //  Gary gets a hit on the targets position
             NavMesh.SamplePosition(targetTransform.value.position, out hit, sampleDistance, NavMesh.AllAreas);
             lastPosition = hit.position;
 
-            navAgent.destination = lastPosition;  //  the destination for Carno is the targets position
+            navAgent.destination = lastPosition;  //  the destination for Gary is the targets position
 
         }
 
@@ -48,7 +48,7 @@ namespace NodeCanvas.Tasks.Actions {
             Debug.Log("going to target");
             
            
-            //  if the distance between the Carno and the targets position is less than 3, end the action
+            //  if the distance between Gary and the targets position is less than 3, end the action
             if (Vector3.Distance(agent.transform.position, targetTransform.value.position) <= 3)
             {
                 Debug.Log("here");

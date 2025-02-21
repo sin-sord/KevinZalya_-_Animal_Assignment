@@ -13,7 +13,7 @@ namespace NodeCanvas.Tasks.Actions {
         //  BLACKBOARD
         public BBParameter<float> hungerFloat;
         public BBParameter<float> thirstFloat;
-        public BBParameter<Vector3> targetPosition;
+
     
         public float hungerUsage;
         public float thirstUsage;
@@ -38,12 +38,14 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 
+            //  makes Gary move to a random position on the NavMesh
             Vector3 roamTarget = Random.insideUnitSphere * roamRadius;
             
             roamTarget += agent.transform.position;
 
             NavMeshHit hit;
 
+            //  Once Gary gets a hit on the target he will move to that position
             NavMesh.SamplePosition(roamTarget, out hit, roamRadius, 1);
             finalDestination = hit.position;
 
@@ -54,10 +56,11 @@ namespace NodeCanvas.Tasks.Actions {
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
 
+            //  hunger and thirst value decrease each frame
             hungerFloat.value -= hungerUsage * Time.deltaTime;
             thirstFloat.value -= thirstUsage * Time.deltaTime;
 
-
+            //  if Gary and the target are within range, end the action
             if (Vector3.Distance(agent.transform.position, finalDestination) < 1f)
             {
                 EndAction(true);

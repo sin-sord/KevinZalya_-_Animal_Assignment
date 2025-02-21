@@ -32,6 +32,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 
+            //  if the value is below the threshold, then move to the corisponding action to refill the bar  
             float value = barValue.value;
             bool barValueBelow = value < barThreshold;
 

@@ -31,6 +31,7 @@ namespace NodeCanvas.Tasks.Actions {
 
             Debug.Log("Refilling bar");
 
+            //  if Gary is at the target position, refill the hunger bar  
             BarValue.value += refillRate * Time.deltaTime;
 
             if (BarValue.value >= maxThresholdBar)

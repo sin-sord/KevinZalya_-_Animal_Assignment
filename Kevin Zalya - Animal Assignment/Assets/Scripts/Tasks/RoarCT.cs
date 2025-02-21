@@ -31,6 +31,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 
+			//  if R is pressed down return true, else return false
 			if (Input.GetKeyDown(KeyCode.R))
 			{
                 return true;
